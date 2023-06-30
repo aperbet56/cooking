@@ -47,19 +47,20 @@ function mealsDisplay() {
       })
       .join("");
   }
-  // Pour afficher en temps réel les résultats de recherche :
-
-  input.addEventListener("input", (e) => {
-    fetchMeals(e.target.value).then(() => mealsDisplay());
-  });
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    mealsDisplay();
-  });
 }
 
 /* Pour afficher les résultats de recherche uniquement lors de l'input/fin de recherche
 input.addEventListener("input", (e) => {
 fetchMeals(e.target.value);
 }); */
+
+// Pour afficher en temps réel les résultats de recherche :
+
+input.addEventListener("input", (e) => {
+  fetchMeals(e.target.value).then(() => mealsDisplay());
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  mealsDisplay();
+});
